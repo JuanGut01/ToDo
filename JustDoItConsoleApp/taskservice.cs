@@ -7,13 +7,19 @@ namespace JustDoItConsoleApp
     class Taskservice
     {
         public List<Task> tasks = new List<Task>();
+        int idIndex = 0;
+        int genId()
+        {
+            idIndex++;
+            return idIndex;
+        }
         public void add(string title, string priority, DateTime deadline)
         {
             var task = new Task();
             task.title = title;
             task.priority = priority;
             task.deadline = deadline;
-            task.taskId = 1;
+            task.taskId = genId();
             tasks.Add(task);
 
         }
@@ -26,8 +32,6 @@ namespace JustDoItConsoleApp
                     t.title = title;
                     t.priority = priority;
                     t.deadline = deadline;
-
-
                 }
             }
         }
