@@ -47,6 +47,7 @@ namespace JustDoItConsoleApp
                 case 2:
                     Console.WriteLine("\nRemove task clicked");
                     //Remove.Task()
+                    Taskservice.delete();
                     ReadInput();
                     break;
                 case 3:
