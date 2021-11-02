@@ -11,7 +11,7 @@ namespace JustDoItConsoleApp
           MENU
  -----------------------
 ¦   1.  Add Task        ¦
-¦   2.  Remove Task     ¦
+¦   2.  Delete Task     ¦
 ¦   3.  Exit            ¦
  -----------------------
 
