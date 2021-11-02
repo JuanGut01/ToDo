@@ -39,9 +39,9 @@ namespace JustDoItConsoleApp
         {
 
         }
-        public void delete()
+        public void delete(int taskId)
         {
-
+            tasks.RemoveAt(taskId);
         }
     }
 }
