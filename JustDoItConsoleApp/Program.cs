@@ -6,7 +6,9 @@ namespace JustDoItConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            UI UI = new UI();
+
+            UI.StartUi();
         }
     }
 }

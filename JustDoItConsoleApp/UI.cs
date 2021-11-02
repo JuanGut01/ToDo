@@ -25,16 +25,26 @@ namespace JustDoItConsoleApp
         }
         public void ReadInput()
         {
-            int Input;
+            int Input = 0;
+            bool isDone = false;
 
-            try
+            while (isDone == false)
             {
-                Input = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (System.FormatException)
-            {
-                Console.WriteLine("Letters and special characters are not permitted. Please choose one of the numbers shown above.");
-                Input = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    Input = Convert.ToInt32(Console.ReadLine());
+
+                    if (Input == 1 || Input == 2 || Input == 3)
+                    {
+                        isDone = true;
+                    }
+                }
+                catch (System.FormatException er)
+                {
+                    Console.WriteLine("Letters and special characters are not permitted. Please choose one of the numbers shown above.");
+                    //Input = Convert.ToInt32(Console.ReadLine());
+                    throw er;
+                }
             }
 
             switch (Input)
