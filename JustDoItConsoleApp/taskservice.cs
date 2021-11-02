@@ -35,13 +35,27 @@ namespace JustDoItConsoleApp
                 }
             }
         }
-        public void complete()
+        public void complete(int taskId, bool finished)
         {
-
+            foreach (Task t in tasks)
+            {
+                if (t.taskId == taskId)
+                {
+                    t.finished = true;
+                }
+            }
         }
         public void delete(int taskId)
         {
-            tasks.RemoveAt(taskId);
+            foreach (Task t in tasks)
+            {
+                if (t.taskId == taskId)
+                {
+                    tasks.Remove(t);
+                    break;
+                }
+                //zweite Möglichkeit ausserhalb der if schlaufe removen
+            }
         }
     }
 }
