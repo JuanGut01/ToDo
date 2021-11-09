@@ -56,8 +56,7 @@ namespace JustDoItConsoleApp
                     break;
                 case 2:
                     Console.WriteLine("\nRemove task clicked");
-                    //Remove.Task()
-                    
+                    //Delete.Task()
                     ReadInput();
                     break;
                 case 3:
@@ -72,6 +71,17 @@ namespace JustDoItConsoleApp
         {
             Console.WriteLine(Menu);
         }
-
+        public void AddTask()
+        {
+            Console.WriteLine("\nTitle:");
+            string TaskTitle = Console.ReadLine();
+            Console.WriteLine("\nPriority:");
+            Console.WriteLine("\nTitle:");
+        }
+        public void DeleteTask() //WIP
+        {
+            Console.WriteLine("\nEnter the ID of the task you want to delete:");
+            int TaskId = Convert.ToInt32(Console.ReadLine());
+        }
     }
 }
