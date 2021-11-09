@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "JpdQh/KG5V+ntGBt3DWBXXgi2rPofSBtQAv4jxVqvefCMgK0ERnOXngz3KPVQ+viDM6yVkcOGEbCMBd+nLzGiw==",
+  "dgSpecHash": "TC2FZmQ7mlDomoqR0iuGxMmZ3AEKd5oPjhgPSN1M0J0enmLBg8O8NuyoFhAuTMSnS/ZE96ZzQtBi4AYuIZrh6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\samir\\Source\\Repos\\ToDo\\JustDoItConsoleApp\\JustDoItConsoleApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\projects\\ToDo\\JustDoItConsoleApp\\JustDoItConsoleApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ganin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\ganin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.21\\microsoft.netcore.app.host.win-x64.3.1.21.nupkg.sha512",
+    "C:\\Users\\ganin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\ganin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\ganin\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
