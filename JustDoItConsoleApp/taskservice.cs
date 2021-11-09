@@ -57,5 +57,12 @@ namespace JustDoItConsoleApp
                 //zweite Möglichkeit ausserhalb der if schlaufe removen
             }
         }
+
+        enum Priority { 
+            Low,
+            Normal,
+            High,
+            Urgent
+        }
     }
 }

@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\juang\\.nuget\\packages\\": {}
+    "C:\\Users\\samir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\juang\\source\\repos\\JustDoItConsoleApp\\JustDoItConsoleApp\\JustDoItConsoleApp.csproj",
+      "projectUniqueName": "C:\\Users\\samir\\Source\\Repos\\ToDo\\JustDoItConsoleApp\\JustDoItConsoleApp.csproj",
       "projectName": "JustDoItConsoleApp",
-      "projectPath": "C:\\Users\\juang\\source\\repos\\JustDoItConsoleApp\\JustDoItConsoleApp\\JustDoItConsoleApp.csproj",
-      "packagesPath": "C:\\Users\\juang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\juang\\source\\repos\\JustDoItConsoleApp\\JustDoItConsoleApp\\obj\\",
+      "projectPath": "C:\\Users\\samir\\Source\\Repos\\ToDo\\JustDoItConsoleApp\\JustDoItConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\samir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\samir\\Source\\Repos\\ToDo\\JustDoItConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\juang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\samir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
