@@ -8,7 +8,7 @@ namespace JustDoItConsoleApp
     {
         public string title;
         public string priority;
-        public DateTime deadline;
+        public string deadline;
         public int taskId;
         public bool finished = false;
     }

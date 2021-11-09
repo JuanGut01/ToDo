@@ -13,7 +13,7 @@ namespace JustDoItConsoleApp
             idIndex++;
             return idIndex;
         }
-        public void add(string title, string priority, DateTime deadline)
+        public void add(string title, string priority, string deadline)
         {
             var task = new Task();
             task.title = title;
@@ -23,7 +23,7 @@ namespace JustDoItConsoleApp
             tasks.Add(task);
 
         }
-        public void edit(string title, string priority, DateTime deadline, int taskId)
+        public void edit(string title, string priority, string deadline, int taskId)
         {
             foreach (Task t in tasks)
             {
