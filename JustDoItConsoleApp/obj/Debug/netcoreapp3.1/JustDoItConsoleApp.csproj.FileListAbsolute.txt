@@ -1,0 +1,14 @@
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\JustDoItConsoleApp.exe
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\JustDoItConsoleApp.deps.json
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\JustDoItConsoleApp.runtimeconfig.json
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\JustDoItConsoleApp.runtimeconfig.dev.json
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\JustDoItConsoleApp.dll
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\JustDoItConsoleApp.pdb
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.AssemblyInfoInputs.cache
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.AssemblyInfo.cs
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.dll
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.pdb
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.genruntimeconfig.cache
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.csproj.AssemblyReference.cache
