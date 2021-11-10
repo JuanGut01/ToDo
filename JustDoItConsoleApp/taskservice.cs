@@ -6,8 +6,8 @@ namespace JustDoItConsoleApp
 {
     class Taskservice
     {
-        public List<Task> tasks = new List<Task>();
-        int idIndex = 0;
+        public static List<Task> taskArray = new List<Task>();
+        int idIndex;
         int genId()
         {
             idIndex++;
@@ -20,12 +20,12 @@ namespace JustDoItConsoleApp
             task.priority = priority;
             task.deadline = deadline;
             task.taskId = genId();
-            tasks.Add(task);
+            taskArray.Add(task);
 
         }
         public void edit(string title, string priority, string deadline, int taskId)
         {
-            foreach (Task t in tasks)
+            foreach (Task t in taskArray)
             {
                 if (t.taskId == taskId)
                 {
@@ -37,7 +37,7 @@ namespace JustDoItConsoleApp
         }
         public void complete(int taskId, bool finished)
         {
-            foreach (Task t in tasks)
+            foreach (Task t in taskArray)
             {
                 if (t.taskId == taskId)
                 {
@@ -47,11 +47,11 @@ namespace JustDoItConsoleApp
         }
         public void delete(int taskId)
         {
-            foreach (Task t in tasks)
+            foreach (Task t in taskArray)
             {
                 if (t.taskId == taskId)
                 {
-                    tasks.Remove(t);
+                    taskArray.Remove(t);
                     break;
                 }
                 //zweite Möglichkeit ausserhalb der if schlaufe removen

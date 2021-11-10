@@ -50,8 +50,7 @@ namespace JustDoItConsoleApp
             switch (Input)
             {
                 case 1:
-                    Console.WriteLine("\nAdd task clicked");
-                    //Add.Task()
+                    AddTask();
                     ReadInput();
                     break;
                 case 2:
@@ -69,19 +68,108 @@ namespace JustDoItConsoleApp
         }
         public void ShowMenu()
         {
+            Console.Clear();
             Console.WriteLine(Menu);
+        }
+        public string CheckForPriority() 
+        {
+            int Input = 0;
+            bool isDone = false;
+            string TaskPriority;
+
+            while (isDone == false)
+            {
+                try
+                {
+                    Input = Convert.ToInt32(Console.ReadLine());
+
+                    if (Input == 1 || Input == 2 || Input == 3 || Input == 4)
+                    {
+                        isDone = true;
+                    } else
+                    {
+                        Console.WriteLine("Please choose one of the options shown above:");
+                    }
+                }
+                catch (System.FormatException er)
+                {
+                    CheckForPriority();
+                    //Input = Convert.ToInt32(Console.ReadLine());
+                    throw er;
+                }
+            }
+
+            switch (Input)
+            {
+                case 1:
+                    TaskPriority = "Low";
+                    return TaskPriority; 
+                case 2:
+                    TaskPriority = "Normal";
+                    return TaskPriority;
+                case 3:
+                    TaskPriority = "High";
+                    return TaskPriority;
+                case 4:
+                    TaskPriority = "Urgent";
+                    return TaskPriority;
+                default:
+                    return null;
+            }
+            
         }
         public void AddTask()
         {
+            // title
             Console.WriteLine("\nTitle:");
             string TaskTitle = Console.ReadLine();
-            Console.WriteLine("\nPriority:");
-            Console.WriteLine("\nTitle:");
+
+            // priority
+            Console.WriteLine("\nChoose one of the following priorities:");
+            Console.WriteLine(@"\n
+1.  Low
+2.  Normal
+3.  High
+4.  Urgent
+");
+
+            string TaskPriority = CheckForPriority();
+
+
+            // title
+            Console.WriteLine("\nDeadline: (dd.mm.yyyy)");
+            string TaskDeadline = Console.ReadLine();
+
+
+            Taskservice service = new Taskservice();
+            service.add(TaskTitle, TaskPriority, TaskDeadline);
+
+            ShowMenu();
+            ShowTasks(service);
+
+
         }
         public void DeleteTask() //WIP
         {
             Console.WriteLine("\nEnter the ID of the task you want to delete:");
             int TaskId = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void ShowTasks(Taskservice service)
+        {
+            Console.WriteLine(@"
+#########################################################
+
+    Id         Title           Priority            Deadline
+-----------------------------------------------------------------------
+");
+
+            foreach (var item in Taskservice.taskArray)
+            {
+                Console.WriteLine(@$"   {item.taskId}            {item.title}          {item.priority}         {item.deadline}
+-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
+");
+            }
         }
     }
 }
