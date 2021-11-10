@@ -45,17 +45,18 @@ namespace JustDoItConsoleApp
                 }
             }
         }
-        public void delete(int taskId)
+        public bool delete(int taskId)
         {
             foreach (Task t in taskArray)
             {
                 if (t.taskId == taskId)
                 {
-                    taskArray.Remove(t);
-                    break;
+                    bool result = taskArray.Remove(t);
+                    return result;
                 }
                 //zweite Möglichkeit ausserhalb der if schlaufe removen
             }
+            return false;
         }
 
         enum Priority { 
