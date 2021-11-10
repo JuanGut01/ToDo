@@ -28,3 +28,5 @@ C:\projects\ToDo\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\JustDoItConsoleApp.p
 C:\projects\ToDo\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.genruntimeconfig.cache
 C:\projects\ToDo\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\projects\ToDo\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.csproj.CopyComplete
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\juang\source\repos\JustDoItConsoleApp\JustDoItConsoleApp\obj\Debug\netcoreapp3.1\JustDoItConsoleApp.csproj.CopyComplete

@@ -6,6 +6,7 @@ namespace JustDoItConsoleApp
 {
     class UI
     {
+        Taskservice service = new Taskservice();
         private TimeAPI time = new TimeAPI();
         private string Menu = @"
           MENU
@@ -19,7 +20,6 @@ namespace JustDoItConsoleApp
         public void StartUi()
         {
             Console.Clear();
-            time.getInfo();
             ShowMenu();
             ReadInput();
         }
@@ -141,7 +141,7 @@ namespace JustDoItConsoleApp
             string TaskDeadline = Console.ReadLine();
 
 
-            Taskservice service = new Taskservice();
+
             service.add(TaskTitle, TaskPriority, TaskDeadline);
 
             ShowMenu();
@@ -160,13 +160,13 @@ namespace JustDoItConsoleApp
             Console.WriteLine(@"
 #########################################################
 
-    Id         Title           Priority            Deadline
+    Id                 Title            Priority                Deadline
 -----------------------------------------------------------------------
 ");
 
             foreach (var item in Taskservice.taskArray)
             {
-                Console.WriteLine(@$"   {item.taskId}            {item.title}          {item.priority}         {item.deadline}
+                Console.WriteLine(@$"       {item.taskId}               {item.title}            {item.priority}             {item.deadline}
 -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   
 ");
             }
