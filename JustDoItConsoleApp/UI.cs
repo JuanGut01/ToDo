@@ -6,7 +6,7 @@ namespace JustDoItConsoleApp
 {
     class UI
     {
-
+        private TimeAPI time = new TimeAPI();
         private string Menu = @"
           MENU
  -----------------------
@@ -14,12 +14,12 @@ namespace JustDoItConsoleApp
 ¦   2.  Delete Task     ¦
 ¦   3.  Exit            ¦
  -----------------------
-
 ";
 
         public void StartUi()
         {
             Console.Clear();
+            time.getInfo();
             ShowMenu();
             ReadInput();
         }

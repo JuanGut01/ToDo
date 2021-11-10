@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using System.Net;
+using System.Net.Http;
 
 namespace JustDoItConsoleApp
 {
@@ -7,7 +9,6 @@ namespace JustDoItConsoleApp
         static void Main(string[] args)
         {
             UI UI = new UI();
-
             UI.StartUi();
         }
     }
