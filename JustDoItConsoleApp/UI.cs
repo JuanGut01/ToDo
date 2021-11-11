@@ -13,7 +13,8 @@ namespace JustDoItConsoleApp
     -----------------------
     ¦   1.  Add Task        ¦
     ¦   2.  Delete Task     ¦
-    ¦   3.  Exit            ¦
+    ¦   3.  Complete Task   ¦
+    ¦   4.  Exit            ¦
     -----------------------
 ";
 
@@ -35,7 +36,7 @@ namespace JustDoItConsoleApp
                 {
                     Input = Convert.ToInt32(Console.ReadLine());
 
-                    if (Input == 1 || Input == 2 || Input == 3)
+                    if (Input == 1 || Input == 2 || Input == 3 || Input == 4)
                     {
                         isDone = true;
                     }
@@ -58,12 +59,20 @@ namespace JustDoItConsoleApp
                     AddTask();
                     ReadInput();
                     break;
+
                 case 2:
                     DeleteTask();
                     ReadInput();
                     break;
+
                 case 3:
+                    //completeTask()
+                    ReadInput();
                     break;
+
+                case 4:
+                    break;
+
                 default:
                     Console.WriteLine("\n   That option is incorrect, please try again");
                     ReadInput();
@@ -157,7 +166,7 @@ namespace JustDoItConsoleApp
 
 
         }
-        public void DeleteTask() //WIP
+        public void DeleteTask() 
         {
             Console.WriteLine("\n   Enter the ID of the task you want to delete:");
             //int TaskId = Convert.ToInt32(Console.ReadLine());
@@ -203,6 +212,53 @@ namespace JustDoItConsoleApp
                 {
                     Console.WriteLine("\n    Task was not deleted.");
                 }
+        }
+        public void CompleteTask()
+        {
+            Console.WriteLine("\n   Enter the ID of the task you want to mark as complete:");
+
+            int Input = 0;
+            bool isDone = false;
+
+            while (isDone == false)
+            {
+                try
+                {
+                    Input = Convert.ToInt32(Console.ReadLine());
+
+                    foreach (var item in Taskservice.taskArray)
+                    {
+                        if (item.taskId == Input)
+                        {
+                            isDone = true;
+                        }
+                    }
+
+                    if (isDone == false)
+                    {
+                        Console.WriteLine($"\n   A task with this ID does not exist. Please enter one of the IDs shown above.");
+                    }
+                }
+                catch (System.FormatException er)
+                {
+                    Console.WriteLine($"\n   A task with this ID does not exist. Please enter one of the IDs shown above.");
+                    //Input = Convert.ToInt32(Console.ReadLine());
+                    //throw er;
+                }
+            }
+
+            bool returned = service.complete(Input);
+            ShowMenu();
+            //Console.WriteLine($"   The task with the id {Input} will now be deleted");
+            if (returned)
+            {
+                Console.WriteLine("\n    Task was deleted.");
+            }
+            else
+            {
+                Console.WriteLine("\n    Task was not deleted.");
+            }
+
         }
 
         public void ShowTasks(Taskservice service)
