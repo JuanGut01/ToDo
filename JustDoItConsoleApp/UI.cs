@@ -14,7 +14,8 @@ namespace JustDoItConsoleApp
     ¦   1.  Add Task        ¦
     ¦   2.  Delete Task     ¦
     ¦   3.  Complete Task   ¦
-    ¦   4.  Exit            ¦
+    ¦   4.  Edit Task       ¦
+    ¦   5.  Exit            ¦
     -----------------------
 ";
 
@@ -36,7 +37,7 @@ namespace JustDoItConsoleApp
                 {
                     Input = Convert.ToInt32(Console.ReadLine());
 
-                    if (Input == 1 || Input == 2 || Input == 3 || Input == 4)
+                    if (Input == 1 || Input == 2 || Input == 3 || Input == 4 || Input == 5)
                     {
                         isDone = true;
                     }
@@ -66,11 +67,16 @@ namespace JustDoItConsoleApp
                     break;
 
                 case 3:
-                    //completeTask()
+                    CompleteTask();
                     ReadInput();
                     break;
 
                 case 4:
+                    EditTask();
+                    ReadInput();
+                    break;
+
+                case 5:
                     break;
 
                 default:
@@ -135,6 +141,11 @@ namespace JustDoItConsoleApp
             }
             
         }
+        public void CheckForDate()
+        { 
+
+
+        }
         public void AddTask()
         {
             // title
@@ -149,7 +160,6 @@ namespace JustDoItConsoleApp
     3.  High
     4.  Urgent
 ");
-
             string TaskPriority = CheckForPriority();
 
 
@@ -162,7 +172,6 @@ namespace JustDoItConsoleApp
             service.add(TaskTitle, TaskPriority, TaskDeadline);
 
             ShowMenu();
-            //ShowTasks(service);
 
 
         }
@@ -249,35 +258,123 @@ namespace JustDoItConsoleApp
 
             bool returned = service.complete(Input);
             ShowMenu();
-            //Console.WriteLine($"   The task with the id {Input} will now be deleted");
             if (returned)
             {
-                Console.WriteLine("\n    Task was deleted.");
+                Console.WriteLine("\n    Task was marked as completed.");
             }
             else
             {
-                Console.WriteLine("\n    Task was not deleted.");
+                Console.WriteLine("\n    Task was not marked as completed.");
             }
 
         }
+        public void EditTask()
+        {
+            Console.WriteLine("\n   Enter the ID of the task you want to edit:");
 
+            int TaskId = 0;
+            bool isDone = false;
+            string prevTitle = null;
+            string prevPriority = null;
+            string prevDeadline = null;
+
+
+            while (isDone == false)
+            {
+                try
+                {
+                    TaskId = Convert.ToInt32(Console.ReadLine());
+
+                    foreach (var item in Taskservice.taskArray)
+                    {
+                        if (item.taskId == TaskId)
+                        {
+                            isDone = true;
+                            prevTitle = item.title;
+                            prevPriority = item.priority;
+                            prevDeadline = item.deadline;
+                            
+                        }
+                    }
+
+                    if (isDone == false)
+                    {
+                        Console.WriteLine($"\n   A task with this ID does not exist. Please enter one of the IDs shown above.");
+                    }
+                }
+                catch (System.FormatException er)
+                {
+                    Console.WriteLine($"\n   A task with this ID does not exist. Please enter one of the IDs shown above.");
+                    //Input = Convert.ToInt32(Console.ReadLine());
+                    //throw er;
+                }
+            }
+
+            string[] newData = GetEditInput(prevTitle, prevPriority, prevDeadline);
+
+            service.edit(newData, TaskId);
+            ShowMenu();
+        }
+        public string[] GetEditInput(string title, string prio, string dln)
+        {
+            Console.WriteLine($"\n   Enter a new title: (previously {title})");
+            string newTitle = Console.ReadLine();
+
+            Console.WriteLine($"\n   Select a new priority: (previously {prio})");
+            Console.WriteLine(@"
+    1.  Low
+    2.  Normal
+    3.  High
+    4.  Urgent
+");
+            string newPriority = CheckForPriority();
+
+            Console.WriteLine($"\n   Enter a new deadline: (previously {dln})");
+            string newDeadline = Console.ReadLine();
+
+            string[] returnArray =
+            {
+                newTitle,
+                newPriority,
+                newDeadline
+            };
+
+            return returnArray;
+
+        }
         public void ShowTasks(Taskservice service)
         {
             Console.WriteLine(@"    TODO LIST
     #########################################################################
     #
-    #      Id                 Title            Priority                Deadline
+    #      Id       Title            Priority           Deadline               Status
     #-----------------------------------------------------------------------");
 
             foreach (var item in Taskservice.taskArray)
             {
-                Console.WriteLine(@$"    #
-    #       {item.taskId}               {item.title}            {item.priority}             {item.deadline}
+                if (item.finished != true)
+                {
+                    Console.WriteLine(@$"    #
+    #       {item.taskId}       {item.title}            {item.priority}             {item.deadline}             {GetStatus(item.finished)}
     #-   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   -   ");
+
+                }
+
             }
 
             Console.WriteLine(@$"    #########################################################################
     ");
+        }
+        public string GetStatus(bool status)
+        {
+            if (status != true)
+            {
+                return "Working";
+            }
+            else
+            {
+                return "Complete";
+            }
         }
     }
 }

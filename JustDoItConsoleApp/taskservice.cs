@@ -23,27 +23,39 @@ namespace JustDoItConsoleApp
             taskArray.Add(task);
 
         }
-        public void edit(string title, string priority, string deadline, int taskId)
+        //public void edit(string title, string priority, string deadline, int taskId)
+        public void edit(string[] newData, int taskId)
         {
             foreach (Task t in taskArray)
             {
                 if (t.taskId == taskId)
                 {
-                    t.title = title;
-                    t.priority = priority;
-                    t.deadline = deadline;
+                    t.title = newData[0];
+                    t.priority = newData[1];
+                    t.deadline = newData[2];
                 }
             }
+            //foreach (Task t in taskArray)
+            //{
+            //    if (t.taskId == taskId)
+            //    {
+            //        t.title = title;
+            //        t.priority = priority;
+            //        t.deadline = deadline;
+            //    }
+            //}
         }
-        public void complete(int taskId, bool finished)
+        public bool complete(int taskId) // parameter bool finished removed, not needed?
         {
             foreach (Task t in taskArray)
             {
                 if (t.taskId == taskId)
                 {
-                    t.finished = true;
+                    bool result = t.finished = true;
+                    return result;
                 }
             }
+            return false;
         }
         public bool delete(int taskId)
         {
