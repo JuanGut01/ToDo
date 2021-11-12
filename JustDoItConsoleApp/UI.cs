@@ -16,14 +16,15 @@ namespace JustDoItConsoleApp
     ¦   2.  Delete Task     ¦
     ¦   3.  Complete Task   ¦
     ¦   4.  Edit Task       ¦
-    ¦   5.  Exit            ¦
+    ¦   5.  TimeApi         ¦
+    ¦   6.  Exit            ¦
     -----------------------
 ";
 
         public void StartUi()
         {
             Console.Clear();
-            time.getInfo();
+            //time.getInfo();
             ShowMenu();
             ReadInput();
         }
@@ -39,7 +40,7 @@ namespace JustDoItConsoleApp
                 {
                     Input = Convert.ToInt32(Console.ReadLine());
 
-                    if (Input == 1 || Input == 2 || Input == 3 || Input == 4 || Input == 5)
+                    if (Input == 1 || Input == 2 || Input == 3 || Input == 4 || Input == 5 || Input == 6)
                     {
                         isDone = true;
                     }
@@ -79,6 +80,13 @@ namespace JustDoItConsoleApp
                     break;
 
                 case 5:
+                    time.getInfo();
+                    Console.WriteLine("Loading...");
+                    System.Threading.Thread.Sleep(10000);
+                    ReadInput();
+                    break;
+
+                case 6:
                     break;
 
                 default:

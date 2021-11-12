@@ -34,7 +34,7 @@ namespace JustDoItConsoleApp
 
         private void showInfo()
         {
-            Console.WriteLine("Today is the " + info["datetime"] + " welcome in " + info["timezone"]);
+            Console.WriteLine("TimeApi has sent back the following info: " + info["datetime"] + info["timezone"]);
         }
 
     }
