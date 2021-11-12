@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace JustDoItConsoleApp
 {
     class UI
     {
         Taskservice service = new Taskservice();
-        private TimeAPI time = new TimeAPI();
-        private string Menu = @"
+        public TimeAPI time = new TimeAPI();
+        private string Menu = @$"
           MENU
     -----------------------
     ¦   1.  Add Task        ¦
@@ -22,6 +23,7 @@ namespace JustDoItConsoleApp
         public void StartUi()
         {
             Console.Clear();
+            time.getInfo();
             ShowMenu();
             ReadInput();
         }
@@ -141,8 +143,37 @@ namespace JustDoItConsoleApp
             }
             
         }
-        public void CheckForDate()
-        { 
+        public string CheckForDate()
+        {
+            string Input = null;
+            string Pattern = @"^[0-3]\d\/[0-1]\d\/[2][0-9]{3}$";
+            bool isDone = false;
+
+            while (isDone == false)
+            {
+                try
+                {
+                    Input = Console.ReadLine();
+
+                    if (Regex.IsMatch(Input, Pattern))
+                    {
+                        isDone = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n   Please enter a date using the following format: DD/MM/YYYY");
+                    }
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine("\n   Please enter a date using the following format: DD/MM/YYYY");
+                    //CheckForPriority();
+                    //Input = Convert.ToInt32(Console.ReadLine());
+                    //throw er;
+                }
+            }
+
+            return Input;
 
 
         }
@@ -164,8 +195,8 @@ namespace JustDoItConsoleApp
 
 
             // title
-            Console.WriteLine("\n   Deadline: (dd.mm.yyyy)");
-            string TaskDeadline = Console.ReadLine();
+            Console.WriteLine("\n   Deadline: (DD/MM/YYYY)");
+            string TaskDeadline = CheckForDate();
 
 
 
@@ -329,8 +360,9 @@ namespace JustDoItConsoleApp
 ");
             string newPriority = CheckForPriority();
 
-            Console.WriteLine($"\n   Enter a new deadline: (previously {dln})");
-            string newDeadline = Console.ReadLine();
+            Console.WriteLine($"\n   Enter a new deadline (DD/MM/YYYY): (previously {dln})");
+            string newDeadline = CheckForDate();
+
 
             string[] returnArray =
             {
